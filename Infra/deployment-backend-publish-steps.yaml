@@ -1,0 +1,16 @@
+steps:
+
+- task: DownloadBuildArtifacts@0
+  displayName: 'Download back-end build artifact'
+  inputs:
+    artifactName: BackEndBuild
+    downloadPath: '$(System.DefaultWorkingDirectory)/backendbuild/'
+
+- task: AzureWebApp@1
+  displayName: 'Publish build to Azure Web App Service'
+  inputs:
+    azureSubscription: '$(publish.frontEnd.azureSubscription)'
+    appType: 'webApp'
+    appName: '$(publish.backEnd.webAppName)'
+    package: '$(System.DefaultWorkingDirectory)/backendbuild/**/*.zip'
+    deploymentMethod: 'auto'

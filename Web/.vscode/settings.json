@@ -1,0 +1,7 @@
+{
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "workbench.tree.indent": 15,
+    "editor.gotoLocation.multiple": "goto",
+    "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+    "zenMode.centerLayout": false
+}

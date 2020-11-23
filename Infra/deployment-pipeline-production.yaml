@@ -1,0 +1,46 @@
+trigger:
+  - master
+
+stages:
+- stage: Build
+  displayName: Build API, UI and Migrations
+  jobs:
+  - job: build_backend_application
+    displayName: build API
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - template: deployment-backend-build-steps.yaml
+
+  - job: build_frontend_application
+    displayName: build UI
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+    - template: deployment-frontend-build-steps.yaml
+
+- stage: MigrationBuild
+  displayName: Build Migration Script
+  jobs:
+  - job: build_migrations_script
+    displayName: Generate script
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - template: deployment-backend-migrations-script-generation-steps.yaml
+
+- stage: Deploy
+  displayName: Deploy API and UI
+  dependsOn: Build
+  pool:
+    vmImage: 'windows-latest'
+  jobs:
+  - deployment: publish_backend_application
+    displayName: Publish API and UI to Azure
+    environment: Production
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - template: deployment-backend-publish-steps.yaml
+          - template: deployment-frontend-publish-steps.yaml

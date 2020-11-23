@@ -1,0 +1,45 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+steps:
+- task: NodeTool@0
+  displayName: 'Install Node.js'
+  inputs:
+    versionSpec: '10.x'
+
+- script: |
+    cd Web
+    npm install
+  displayName: 'Restore npm packages'
+
+# - script: |
+#     cd Web
+#     npm run test-ci
+#   displayName: 'Unit test React app using Jest'
+
+# - task: PublishTestResults@2
+#   displayName: 'Publish unit test results'
+#   condition: succeededOrFailed()
+#   inputs:
+#     testRunner: JUnit
+#     testResultsFiles: '**/junit.xml'
+    
+# - task: PublishCodeCoverageResults@1
+#   displayName: 'Publish code coverage results'
+#   inputs: 
+#     codeCoverageTool: Cobertura
+#     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
+#     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+
+- script: |
+    cd Web
+    npm run $(build.frontEnd.buildConfig)
+  displayName: 'Build React app using create-react-app cli ($(build.frontEnd.buildConfig))'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish build artifact'
+  inputs:
+    pathtoPublish: '$(Build.Repository.LocalPath)/Web/build/'
+    artifactName: FrontEndBuild

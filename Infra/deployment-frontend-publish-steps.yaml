@@ -1,0 +1,17 @@
+steps:
+
+- task: DownloadBuildArtifacts@0
+  displayName: 'Download front-end build artifact'
+  inputs:
+    artifactName: FrontEndBuild
+    downloadPath: '$(System.DefaultWorkingDirectory)'
+
+- task: AzureFileCopy@3
+  displayName: 'Publish to Azure storage account - static website'
+  inputs:
+    SourcePath: '$(System.DefaultWorkingDirectory)/FrontEndBuild'
+    azureSubscription: '$(publish.frontEnd.azureSubscription)'
+    Destination: 'AzureBlob'
+    storage: '$(publish.frontEnd.storageAccount)'
+    ContainerName: '$web'
+    CleanTargetBeforeCopy: True

@@ -1,0 +1,28 @@
+// this is to be used with vscode extension Rest Client
+
+# test data:
+# SELL NGP-TRS (D) 08-04-2020 250GJ $9.70
+# BUY NGP-TRS (D) 09-04-2020 250GJ $7.80
+# SELL NGP-TRS (M) OCT-20 15GJ $22.22
+
+# @name tokenRequest
+POST https://uat-exchange.emstradepoint.co.nz/oauth/token
+content-type: application/x-www-form-urlencoded;charset=UTF-8
+
+client_id=fda3243c09bd5ca8c2d053b26839f358c7597b2eb706f3c1fb679d87a469302b
+&secret_id=4d8f1305a714fc82c370f494b27f4d8ea045b456589998954c4691bcb2f714c6
+&grant_type=password
+&username=uat_trusapi
+&password=gr3aTtraD!ng01
+
+@token = {{tokenRequest.response.body.access_token}}
+
+# @name tradesRequest
+GET https://uat-exchange.emstradepoint.co.nz/api/v1/trades?owner=company_trades&created_from=2020-06-08T00:00:00+12:00&created_to=2020-06-08T23:59:59+12:00&voided=No
+Authorization: Bearer {{token}}
+
+# @name tradesRequest
+GET https://uat-exchange.emstradepoint.co.nz/api/v1/trades?owner=company_trades&created_from=2020-03-04T00:00:00+12:00&created_to=2020-03-04T23:59:59+12:00&voided=No
+Authorization: Bearer {{token}}
+
+#GET https://uat-exchange.emstradepoint.co.nz/api/v1/trades?owner=company_trades&created_from=04%2F08%2F2020%2000%3A00%3A00%20%2B12%3A00&created_to=04%2F08%2F2020%2023%3A59%3A59%20%2B12%3A00&voided=No

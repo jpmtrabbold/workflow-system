@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Rubrik;
+    font-weight: 300;
+    src: url(./rubrik/Rubrik-ExtraLight.woff);
+}
+
+@font-face {
+    font-family: Rubrik;
+    font-weight: normal;
+    src: url(./rubrik/Rubrik-Light.woff);
+}
+
+@font-face {
+    font-family: Rubrik;
+    font-weight: 500; /* 400 */
+    src: url(./rubrik/Rubrik-Regular.woff);
+}
+
+@font-face {
+    font-family: Rubrik;
+    font-weight: bold;
+    src: url(./rubrik/Rubrik-Medium.woff);
+}
+
+@font-face {
+    font-family: RubrikMedium;
+    font-weight: normal;
+    src: url(./rubrik/Rubrik-Medium.woff);
+}

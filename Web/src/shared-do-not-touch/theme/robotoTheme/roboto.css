@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Roboto;
+  font-weight: normal;
+  src: url(./Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 500; /* 400 */
+  src: url(./Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: bold;
+  src: url(./Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  font-weight: normal;
+  src: url(./Roboto/Roboto-Medium.ttf);
+}

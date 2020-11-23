@@ -1,0 +1,21 @@
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Run unit tests
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(publish.backEnd.buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build and publish .net core web project
+  inputs:
+    projects: '**/*Web*.csproj'
+    command: publish
+    publishWebProjects: False
+    arguments: '--configuration $(publish.backEnd.buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Generate build artifact'
+  inputs:
+    artifactName: BackEndBuild
