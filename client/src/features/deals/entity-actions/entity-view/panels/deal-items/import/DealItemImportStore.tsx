@@ -68,8 +68,8 @@ export class DealItemImportStore {
 
     downloadExcelTemplate = async () => {
         var workbook = new Excel.Workbook()
-        workbook.creator = 'DealSystem'
-        workbook.lastModifiedBy = 'DealSystem'
+        workbook.creator = 'WorkflowSystem'
+        workbook.lastModifiedBy = 'WorkflowSystem'
         workbook.created = new Date()
         workbook.modified = new Date()
 
@@ -135,7 +135,7 @@ export class DealItemImportStore {
         const buffer = await workbook.xlsx.writeBuffer()
         const blob = new Blob([buffer])
 
-        saveAs(blob, `DealSystem Deal Item Template - ${this.rootStore.infoStore.dealTypeName}.xlsx`)
+        saveAs(blob, `WorkflowSystem Deal Item Template - ${this.rootStore.infoStore.dealTypeName}.xlsx`)
     }
 
     handleExcelFile = async (files: File[]) => {

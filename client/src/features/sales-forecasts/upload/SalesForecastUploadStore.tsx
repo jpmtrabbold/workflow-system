@@ -102,8 +102,8 @@ export class SalesForecastUploadStore {
 
     downloadTemplate = async () => {
         var workbook = new Excel.Workbook()
-        workbook.creator = 'DealSystem'
-        workbook.lastModifiedBy = 'DealSystem'
+        workbook.creator = 'WorkflowSystem'
+        workbook.lastModifiedBy = 'WorkflowSystem'
         workbook.created = new Date()
         workbook.modified = new Date()
 
@@ -123,7 +123,7 @@ export class SalesForecastUploadStore {
 
         const buffer = await workbook.xlsx.writeBuffer()
         const blob = new Blob([buffer])
-        saveAs(blob, `Sales Forecast Template (DealSystem).xlsx`)
+        saveAs(blob, `Sales Forecast Template (WorkflowSystem).xlsx`)
     }
 
     handleFileUpload = (files: File[]) => {
@@ -163,7 +163,7 @@ export class SalesForecastUploadStore {
             setTimeout(() => {
                 messageInfo({
                     title: 'Inconsistent Data',
-                    content: "The data being imported is inconsistent and cannot be imported into DealSystem."
+                    content: "The data being imported is inconsistent and cannot be imported into WorkflowSystem."
                 })
             });
         }

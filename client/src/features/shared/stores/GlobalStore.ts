@@ -198,7 +198,7 @@ export class GlobalStore {
         this.userPopperOpen = false
     }
     get appBarTitle() {
-        return 'DealSystem ' +
+        return 'WorkflowSystem ' +
             ""//(process.env.REACT_APP_ENVIRONMENT_ID !== "prod" ? "(" + process.env.REACT_APP_ENVIRONMENT_NAME + ")" : "")
     }
     standardTheme = createMuiTheme()

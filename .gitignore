@@ -362,9 +362,9 @@ API/Trustpower.TradingDeals.Application/obj
 API/InversionRepo/bin
 /API/Trustpower.TradingDeals.Infrastructure.EmsIntegration/bin
 /API/Trustpower.TradingDeals.Infrastructure.EmsIntegration/obj
-/API/Company.DealSystem.Application/obj
-/API/Company.DealSystem.Domain/obj
-/API/Company.DealSystem.Infrastructure/obj
-/API/Company.DealSystem.Infrastructure.EmsIntegration/obj
-/API/Company.DealSystem.Tests/obj
-/API/Company.DealSystem.Web/obj
+/API/Company.WorkflowSystem.Application/obj
+/API/Company.WorkflowSystem.Domain/obj
+/API/Company.WorkflowSystem.Infrastructure/obj
+/API/Company.WorkflowSystem.Infrastructure.EmsIntegration/obj
+/API/Company.WorkflowSystem.Tests/obj
+/API/Company.WorkflowSystem.Web/obj

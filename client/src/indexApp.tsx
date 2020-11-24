@@ -14,7 +14,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 serviceWorker.register({
     onUpdate: () => messageWarning(
         {
-            content: 'DealSystem was updated. Please close all instances of DealSystem and open it again to have the new version. Until that, you may experience instability.',
+            content: 'WorkflowSystem was updated. Please close all instances of WorkflowSystem and open it again to have the new version. Until that, you may experience instability.',
             title: 'App updated'
         })
 })
