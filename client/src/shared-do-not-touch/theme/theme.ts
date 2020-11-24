@@ -2,8 +2,8 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme'
 
 export const createTheme = (dark = false) => {
-    const purple = dark ? '#e8baba' : '#7d2121'
-    const purpleLight = dark ? '#e8baba' : '#ad14c8'
+    const secondary = dark ? '#e8baba' : '#7d2121'
+    const secondaryLight = dark ? '#e8baba' : '#ad14c8'
     const blue = dark ? '#69a2e5' : '#246bbe'//'#66b0ff' : '#2A7DDD'
     var red = dark ? '#ff9fc1' : '#FA0057'
     const options: ThemeOptions = {
@@ -15,8 +15,8 @@ export const createTheme = (dark = false) => {
                 main: blue,
             },
             secondary: {
-                light: purpleLight,
-                main: purple,
+                light: secondaryLight,
+                main: secondary,
             },
             error: {
                 main: red
@@ -26,15 +26,15 @@ export const createTheme = (dark = false) => {
             fontFamily: 'Roboto, sans-serif',
             h5: {
                 fontWeight: 100,
-                color: purple,
+                color: secondary,
             },
             h6: {
                 fontWeight: 400,
-                color: purple,
+                color: secondary,
             },
             subtitle1: {
                 fontWeight: 500,
-                color: purple,
+                color: secondary,
             },
         },
         overrides: {

@@ -368,3 +368,9 @@ API/InversionRepo/bin
 /API/Company.WorkflowSystem.Infrastructure.EmsIntegration/obj
 /API/Company.WorkflowSystem.Tests/obj
 /API/Company.WorkflowSystem.Web/obj
+/api/Company.WorkflowSystem.Web/bin/Debug/netcoreapp3.1
+/api/Company.WorkflowSystem.Tests/bin/Debug/netcoreapp3.1
+/api/Company.WorkflowSystem.Infrastructure.EmsIntegration/bin/Debug/netcoreapp3.1
+/api/Company.WorkflowSystem.Infrastructure/bin/Debug/netstandard2.1
+/api/Company.WorkflowSystem.Domain/bin/Debug/netstandard2.1
+/api/Company.WorkflowSystem.Application/bin/Debug/netstandard2.1
