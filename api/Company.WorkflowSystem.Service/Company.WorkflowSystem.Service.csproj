@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.7.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Company.WorkflowSystem.Domain\Company.WorkflowSystem.Domain.csproj" />
+    <ProjectReference Include="..\infrastructure\Company.WorkflowSystem.Database\Company.WorkflowSystem.Database.csproj" />
+    <ProjectReference Include="..\InversionRepo\InversionRepo.csproj" />
+  </ItemGroup>
+
+</Project>

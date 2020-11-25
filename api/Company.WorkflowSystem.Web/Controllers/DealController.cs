@@ -6,11 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Company.WorkflowSystem.Application.Models.Dtos.Deals;
-using Company.WorkflowSystem.Application.Models.ViewModels.Counterparties;
-using Company.WorkflowSystem.Application.Models.ViewModels.Deals;
-using Company.WorkflowSystem.Application.Models.ViewModels.Shared;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.Dtos.Deals;
+using Company.WorkflowSystem.Service.Models.ViewModels.Counterparties;
+using Company.WorkflowSystem.Service.Models.ViewModels.Deals;
+using Company.WorkflowSystem.Service.Models.ViewModels.Shared;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {

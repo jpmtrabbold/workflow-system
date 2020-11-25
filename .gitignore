@@ -374,3 +374,13 @@ API/InversionRepo/bin
 /api/Company.WorkflowSystem.Infrastructure/bin/Debug/netstandard2.1
 /api/Company.WorkflowSystem.Domain/bin/Debug/netstandard2.1
 /api/Company.WorkflowSystem.Application/bin/Debug/netstandard2.1
+/api/Company.WorkflowSystem.Domain/bin/Debug/netcoreapp3.1
+/api/Company.WorkflowSystem.Service/bin/Debug/netcoreapp3.1
+/api/Company.WorkflowSystem.Service/obj
+/api/Company.WorkflowSystem.UnitTests/obj
+/api/Company.WorkflowSystem.UnitTests/bin/Debug/netcoreapp3.1
+/api/Company.WorkflowSystem.Web/bin/Debug/net5.0
+/api/infrastructure/Company.WorkflowSystem.Database/bin/Debug/netcoreapp3.1
+/api/infrastructure/Company.WorkflowSystem.Database/obj
+/api/infrastructure/Company.WorkflowSystem.EmailService/bin/Debug/netcoreapp3.1
+/api/infrastructure/Company.WorkflowSystem.EmailService/obj

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Company.WorkflowSystem.Application.Models.Dtos.SalesForecasts;
-using Company.WorkflowSystem.Application.Models.ViewModels.SalesForecasts;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.Dtos.SalesForecasts;
+using Company.WorkflowSystem.Service.Models.ViewModels.SalesForecasts;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {

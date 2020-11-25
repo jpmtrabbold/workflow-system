@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Net;
 using System.Threading.Tasks;
-using Company.WorkflowSystem.Application.Exceptions;
+using Company.WorkflowSystem.Service.Exceptions;
 using Company.WorkflowSystem.Web.Models;
 
 namespace Company.WorkflowSystem.Web.Middleware

@@ -1,13 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Company.WorkflowSystem.Domain.Interfaces;
 using Company.WorkflowSystem.Infrastructure.EmailService;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Services;
 using InversionRepo.Interfaces;
 using InversionRepo;
-using Company.WorkflowSystem.Infrastructure.Context;
+using Company.WorkflowSystem.Database.Context;
 using Microsoft.AspNetCore.Http;
 using Company.WorkflowSystem.Domain.Interfaces.EmsTradepoint;
-using Company.WorkflowSystem.Infrastructure.EmsIntegration;
 using Company.WorkflowSystem.Domain.Services;
 
 namespace Company.WorkflowSystem.Web
@@ -19,7 +18,6 @@ namespace Company.WorkflowSystem.Web
             // scoped injected dependencies
             services.AddScoped<IRepository<TradingDealsContext>, Repository<TradingDealsContext>>();
             services.AddSingleton<IEmailService, EmailService>();
-            services.AddSingleton<IEmsTradepointService, EmsTradepointService>();
 
             // scoped singletons
             services.AddScoped<ScopedDataService>();

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,16 +28,16 @@ namespace Company.WorkflowSystem.Web
                 var builtConfig = config.Build();
                 var keyVaultEndpoint = GetKeyVaultEndpoint();
                 if (!string.IsNullOrWhiteSpace(keyVaultEndpoint))
-                {                    
+                {
                     var azureServiceTokenProvider = new AzureServiceTokenProvider();
                     var keyVaultClient = new KeyVaultClient(
                         new KeyVaultClient.AuthenticationCallback(
                             azureServiceTokenProvider.KeyVaultTokenCallback));
 
-                  config.AddAzureKeyVault(
-                      $"https://{keyVaultEndpoint}.vault.azure.net/",
-                      keyVaultClient,
-                      new DefaultKeyVaultSecretManager());
+                    config.AddAzureKeyVault(
+                        $"https://{keyVaultEndpoint}.vault.azure.net/",
+                        keyVaultClient,
+                        new DefaultKeyVaultSecretManager());
                 }
             })
             .ConfigureWebHostDefaults(webBuilder =>

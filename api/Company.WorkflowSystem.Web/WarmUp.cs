@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Company.WorkflowSystem.Domain.Interfaces;
 using Company.WorkflowSystem.Infrastructure.EmailService;
-using InversionRepo.Interfaces; using Company.WorkflowSystem.Infrastructure.Context;
-using Company.WorkflowSystem.Application.Services;
+using InversionRepo.Interfaces; using Company.WorkflowSystem.Database.Context;
+using Company.WorkflowSystem.Service.Services;
 using Microsoft.AspNetCore.Mvc;
-using Company.WorkflowSystem.Application.Models.ViewModels.Deals;
+using Company.WorkflowSystem.Service.Models.ViewModels.Deals;
 
 namespace Company.WorkflowSystem.Web
 {

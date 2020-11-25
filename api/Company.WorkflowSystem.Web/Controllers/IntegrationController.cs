@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Company.WorkflowSystem.Application.Models.Dtos.Integration;
-using Company.WorkflowSystem.Application.Models.Dtos.Users;
-using Company.WorkflowSystem.Application.Models.ViewModels.Shared;
-using Company.WorkflowSystem.Application.Models.ViewModels.Users;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.Dtos.Integration;
+using Company.WorkflowSystem.Service.Models.Dtos.Users;
+using Company.WorkflowSystem.Service.Models.ViewModels.Shared;
+using Company.WorkflowSystem.Service.Models.ViewModels.Users;
+using Company.WorkflowSystem.Service.Services;
 using Company.WorkflowSystem.Domain.Enum;
 
 namespace Company.WorkflowSystem.Web.Controllers

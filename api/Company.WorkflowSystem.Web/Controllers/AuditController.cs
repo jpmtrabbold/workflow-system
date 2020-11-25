@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Company.WorkflowSystem.Application.Models.ViewModels.Audit;
-using Company.WorkflowSystem.Application.Models.ViewModels.Shared;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.ViewModels.Audit;
+using Company.WorkflowSystem.Service.Models.ViewModels.Shared;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {

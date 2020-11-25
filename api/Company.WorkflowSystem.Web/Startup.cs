@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Company.WorkflowSystem.Infrastructure.Context;
+using Company.WorkflowSystem.Database.Context;
 using Company.WorkflowSystem.Web.Middleware;
 using Hangfire;
 using Hangfire.SqlServer;
@@ -39,7 +39,7 @@ namespace Company.WorkflowSystem.Web
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.WithOrigins(Configuration.GetValue<string>("FrontEndBaseUrl"))
+                    builder => builder.WithOrigins(Configuration["FrontEndBaseUrl"])
                     .AllowAnyMethod()
                     .WithExposedHeaders("Content-Length", "Access-Control-Allow-Origin", "TotalRecords", "Origin")
                     .AllowCredentials()
@@ -86,7 +86,7 @@ namespace Company.WorkflowSystem.Web
             {
                 options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind;
                 options.SerializerSettings.DateParseHandling = DateParseHandling.DateTimeOffset;
-                
+
             });
 
             // Register the Swagger services
@@ -96,7 +96,7 @@ namespace Company.WorkflowSystem.Web
                 {
                     document.Info.Version = "v1";
                     document.Info.Title = "WorkflowSystem API";
-                    document.Info.Description = $"API for the following WorkflowSystem front-end: {Configuration.GetValue<string>("FrontEndBaseUrl")}";
+                    document.Info.Description = $"API for the following WorkflowSystem front-end: {Configuration["FrontEndBaseUrl"]}";
                 };
                 x.DefaultReferenceTypeNullHandling = ReferenceTypeNullHandling.NotNull;
                 x.DefaultResponseReferenceTypeNullHandling = ReferenceTypeNullHandling.NotNull;
@@ -105,7 +105,7 @@ namespace Company.WorkflowSystem.Web
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<TradingDealsContext>
                 (options => options
-                .UseSqlServer(connection,  b => b.MigrationsAssembly("Company.WorkflowSystem.Web"))
+                .UseSqlServer(connection, b => b.MigrationsAssembly("Company.WorkflowSystem.Web"))
                 );
 
             // ** Any local dependency injections go inside DependencyInjection.Apply
@@ -140,11 +140,11 @@ namespace Company.WorkflowSystem.Web
             var options = new DashboardOptions
             {
                 Authorization = new[] { new HangfireAuthorizationFilter() },
-                AppPath = Configuration.GetValue<string>("FrontEndBaseUrl"),
+                AppPath = Configuration["FrontEndBaseUrl"],
             };
-            
+
             //app.UseHangfireDashboard("/hangfire", options);
-            
+
             WarmUp.Run(app.ApplicationServices);
         }
     }

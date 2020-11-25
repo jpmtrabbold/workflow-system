@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Company.WorkflowSystem.Domain.ValueObjects;
 
 namespace Company.WorkflowSystem.Domain.Entities
 {

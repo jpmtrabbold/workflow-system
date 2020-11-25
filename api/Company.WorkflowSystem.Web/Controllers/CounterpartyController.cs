@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Company.WorkflowSystem.Application.Models.Dtos.Counterparties;
-using Company.WorkflowSystem.Application.Models.ViewModels.Counterparties;
-using Company.WorkflowSystem.Application.Models.ViewModels.Shared;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.Dtos.Counterparties;
+using Company.WorkflowSystem.Service.Models.ViewModels.Counterparties;
+using Company.WorkflowSystem.Service.Models.ViewModels.Shared;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {

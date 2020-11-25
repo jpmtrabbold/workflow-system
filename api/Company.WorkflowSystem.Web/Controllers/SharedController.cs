@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Company.WorkflowSystem.Application.Models.ViewModels.Shared;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.ViewModels.Shared;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {

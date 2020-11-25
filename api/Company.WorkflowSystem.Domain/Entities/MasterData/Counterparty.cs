@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Company.WorkflowSystem.Domain.ValueObjects;
 
 namespace Company.WorkflowSystem.Domain.Entities
 {
@@ -18,9 +17,6 @@ namespace Company.WorkflowSystem.Domain.Entities
         /// Counterparty's code. It is used to generate the Deal Number prefix
         /// </summary>
         public string Code { get; set; }
-
-        public Address Address { get; set; }
-        
         public int? CountryId { get; set; }
         public Country Country { get; set; }
         public string CompanyNumber { get; set; }

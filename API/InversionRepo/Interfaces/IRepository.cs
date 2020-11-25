@@ -16,7 +16,7 @@ namespace InversionRepo.Interfaces
         IListRequestBuilder<TEntity, TProjectedEntity, TContext> ProjectedListBuilder<TEntity, TProjectedEntity>(Expression<Func<TEntity, TProjectedEntity>> projection, IListRequest listRequest = null)
             where TEntity : class, IEntity;
 
-        Task<List<TProjectedEntity>> ProjectedList<TEntity, TProjectedEntity>(Expression<Func<TEntity, TProjectedEntity>> projection, Expression<Func<TEntity, bool>> predicate = null)
+        Task<List<TProjectedEntity>> ProjectedList<TEntity, TProjectedEntity>(Expression<Func<TEntity, TProjectedEntity>> projection, Expression<Func<TProjectedEntity, bool>> predicate = null)
             where TEntity : class, IEntity;
 
         Task<TProjectedEntity> ProjectedGetById<TEntity, TProjectedEntity>(int? id, Expression<Func<TEntity, TProjectedEntity>> projection)

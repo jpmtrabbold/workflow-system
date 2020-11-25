@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Hangfire;
 using Hangfire.SqlServer;
 using System;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Hangfire
 {
@@ -34,12 +34,12 @@ namespace Company.WorkflowSystem.Web.Hangfire
             // Add the processing server as IHostedService
             services.AddHangfireServer();
             JobStorage.Current = SQLServerStorage;
-            
-            // Add/Update jobs to be processed
-            var cron = Cron.Daily(16, 0); // 16h UTC - 4am NZT
-            RecurringJob.AddOrUpdate<DealIntegrationService>("FetchEmsTrades", service => service.EmsFetchFromYesterday(), cron);
 
-            cron = Cron.Daily(18, 0); // 18h UTC - 6am NZT
+            //// Add/Update jobs to be processed
+            //var cron = Cron.Daily(16, 0); // 16h UTC - 4am NZT
+            //RecurringJob.AddOrUpdate<DealIntegrationService>("FetchEmsTrades", service => service.EmsFetchFromYesterday(), cron);
+
+            var cron = Cron.Daily(18, 0); // 18h UTC - 6am NZT
             //cron = Cron.Daily(2, 0); // 2h UTC - 2pm NZT - for testing
             RecurringJob.AddOrUpdate<ReminderService>("SendReminders", service => service.SendReminders(), cron);
 

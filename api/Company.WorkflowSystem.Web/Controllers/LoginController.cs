@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Services;
+using Microsoft.Identity.Web;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {

@@ -1,4 +1,5 @@
-﻿using InversionRepo.Interfaces;
+﻿
+using InversionRepo.Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Company.WorkflowSystem.Domain.Entities

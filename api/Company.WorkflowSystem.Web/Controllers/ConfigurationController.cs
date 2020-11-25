@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Company.WorkflowSystem.Application.Models.Dtos.Configuration;
-using Company.WorkflowSystem.Application.Models.ViewModels.Configuration;
-using Company.WorkflowSystem.Application.Services;
+using Company.WorkflowSystem.Service.Models.Dtos.Configuration;
+using Company.WorkflowSystem.Service.Models.ViewModels.Configuration;
+using Company.WorkflowSystem.Service.Services;
 
 namespace Company.WorkflowSystem.Web.Controllers
 {
